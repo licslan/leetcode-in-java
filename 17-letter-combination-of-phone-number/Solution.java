@@ -19,6 +19,5 @@ public class Solution {
 		for (String k : refer[idx]) {
 			helper(list, digits.substring(1, digits.length()), s + k);
 		}
-		return;
 	}
 }
