@@ -1,4 +1,5 @@
 public class Solution {
+	//将矩阵当作一个一维数组，进行二分查找
 	public boolean searchMatrix(int[][] matrix, int target) {
 		if (matrix == null || matrix.length == 0)
 			return false;
