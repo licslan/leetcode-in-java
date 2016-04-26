@@ -1,18 +1,19 @@
 public class Solution {
     // public int mySqrt(int x) {
-    //     long r = x;
-    //     while (r*r > x)
-    //         r = (r + x/r) / 2;
-    //     return (int) r;
+    // long r = x;
+    // while (r*r > x)
+    // r = (r + x/r) / 2;
+    // return (int) r;
     // }
-    
+
     public int mySqrt(int x) {
-        if (x == 0) return 0;
+        if (x == 0)
+            return 0;
         int start = 1, end = x;
-        while (start < end) { 
+        while (start < end) {
             int mid = start + (end - start) / 2;
             if (mid <= x / mid && (mid + 1) > x / (mid + 1))// Found the result
-                return mid; 
+                return mid;
             else if (mid > x / mid)// Keep checking the left part
                 end = mid;
             else

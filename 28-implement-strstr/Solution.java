@@ -8,7 +8,7 @@ public class Solution {
         }
         int threshold = l1 - l2;
         for (int i = 0; i <= threshold; ++i) {
-            if (haystack.substring(i,i+l2).equals(needle)) {
+            if (haystack.substring(i, i + l2).equals(needle)) {
                 return i;
             }
         }
