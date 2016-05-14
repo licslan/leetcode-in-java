@@ -9,4 +9,15 @@ public class Solution {
         }
         return maxProfit;
     }
+
+    // DP solution
+    public int maxProfit1(int[] prices) {
+        int hold = Integer.MIN_VALUE;
+        int release = 0;
+        for (int price : prices) {
+            release = Math.max(release, hold + price);
+            hold = Math.max(hold, -price);// 到这个price为止最低的买入价格
+        }
+        return release;
+    }
 }

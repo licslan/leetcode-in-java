@@ -23,6 +23,7 @@ public class Solution {
     }
     
     // DP solution,O(n)
+    // 利用动态规划的思想进行改进，保持计算的中间结果，减少重复的计算
     public int maxProfit(int[] prices) {
         int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
         int release1 = 0, release2 = 0;
