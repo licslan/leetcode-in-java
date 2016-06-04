@@ -6,6 +6,7 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+// O(n^2) time, O(1) space
 public class Solution {
     public ListNode insertionSortList(ListNode head) {
         if (head == null) return head;
