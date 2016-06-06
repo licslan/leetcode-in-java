@@ -1,5 +1,5 @@
 public class Solution {
-    // binary search
+    // binary search，此题通过画图分类讨论很容易得到思路
     public int findMin(int[] nums) {
         int start = 0, end = nums.length - 1;
         while (start < end) {
