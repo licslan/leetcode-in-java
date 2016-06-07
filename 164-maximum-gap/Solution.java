@@ -1,5 +1,5 @@
 public class Solution {
-    // 利用桶排序思想
+    // 利用桶排序思想，O(n) time
     public static int maximumGap(int[] nums) {
         if (nums == null || nums.length < 2)
             return 0;
