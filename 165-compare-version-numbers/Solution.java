@@ -4,11 +4,10 @@ public class Solution {
         String[] s2 = version2.split("\\.");
         int length = Math.max(s1.length, s2.length);
         for (int i = 0; i < length; i++) {
-            Integer v1 = i < s1.length ? Integer.parseInt(s1[i]) : 0;
-            Integer v2 = i < s2.length ? Integer.parseInt(s2[i]) : 0;// 用int的话不好用compareTo方法
-            int res = v1.compareTo(v2);
-            if (res != 0)
-                return res;
+            int v1 = i < s1.length ? Integer.parseInt(s1[i]) : 0;
+            int v2 = i < s2.length ? Integer.parseInt(s2[i]) : 0;// 用int的话不好用compareTo方法
+            if (v1 > v2) return 1;
+            if (v1 < v2) return -1;
         }
         return 0;
     }
