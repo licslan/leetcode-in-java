@@ -7,7 +7,7 @@ public class Solution {
     }
 
     // O(n)
-    public int majorityElement(int[] nums) {
+    public int majorityElement1(int[] nums) {
         int major = nums[0];
         int count = 1;
         for (int i = 1; i < nums.length; i++) {
