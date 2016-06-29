@@ -23,9 +23,11 @@ public class Solution {
             }
         }
 
-        // 基界条件
+        // 基界条件，字符串只包括数字
         if (res.size() == 0)
             res.add(Integer.valueOf(input));
         return res;
     }
+
+    // DP?
 }
