@@ -14,7 +14,7 @@ public class Solution {
     public boolean isPerfectSquare2(int num) {
         int low = 1, high = num;
         while (low <= high) {
-            long mid = (low + high) >> 1;// 这里必须用long定义mid来避免mid*mid溢出导致判断错误
+            long mid = (low + high) >> 1;// 这里必须用long定义mid来避免mid*mid溢出导致判断错误!!!
             if (mid * mid == num)
                 return true;
             else if (mid * mid > num)
