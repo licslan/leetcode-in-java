@@ -17,3 +17,15 @@ class Solution(object):
                 return [i, d[target-num]]
             i = i + 1
         return [-1, -1]
+
+    # solution2
+    def twoSum1(self, nums, target):
+        if len(nums) <= 1:
+            return [-1, -1]
+        d = {}
+        for i in range(len(nums)):
+            if nums[i] in d:
+                return [d[nums[i]], i]
+            else:
+                d[target-nums[i]] = i
+        return [-1, -1]
