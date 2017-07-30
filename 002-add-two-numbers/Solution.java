@@ -8,22 +8,25 @@
  */
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        return jk(l1, l2, 0);
+        return help(l1, l2, 0);
     }
 
-    public ListNode jk(ListNode l1, ListNode l2, int carry) {
-        if (l1 == null && l2 == null && carry == 0)
+    private ListNode help(ListNode l1, ListNode l2, int carray) {
+        if (l1 == null && l2 == null && carray == 0)
             return null;
+
         int sum = 0;
-        sum = carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
+        sum = carray + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
+        // 注意：sum等于10的时候也要进位
         if (sum >= 10) {
-            sum = sum - 10;
-            carry = 1;
-        } else {
-            carry = 0;
-        }
-        ListNode tmp = new ListNode(sum);
-        tmp.next = jk(l1 == null ? null : l1.next, l2 == null ? null : l2.next, carry);
-        return tmp;
+            sum -= 10;
+            carray = 1;
+        } else
+            carray = 0;
+
+        ListNode node = new ListNode(sum);
+        // 这里要注意l1、l2为null
+        node.next = help(l1 == null ? null : l1.next, l2 == null ? null : l2.next, carray);
+        return node;
     }
 }
