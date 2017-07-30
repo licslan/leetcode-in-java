@@ -7,6 +7,7 @@ public class Solution {
 
         for (int i = 0; i < nums.length; ++i) {
             // 题目中有个条件：you may not use the same element twice
+            // map中一定有nums[i]，就看有没有target-nums[i]
             if (map.containsKey(target - nums[i]) && (map.get(target - nums[i]) != i))
                 return new int[]{i, map.get(target - nums[i])};
         }
