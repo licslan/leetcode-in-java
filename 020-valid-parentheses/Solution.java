@@ -1,5 +1,5 @@
 public class Solution {
-    public boolean isValid(String s) {
+    public boolean isValid1(String s) {
         int len = s.length();
         char[] stack = new char[len + 1];
         int top = 1;
@@ -20,17 +20,24 @@ public class Solution {
             return true;
         return false;
     }
-    
-    //Another simple solution with system stack
-    
-    // public boolean isValid(String s) {
-    //     Stack<Integer> p = new Stack<>();
-    //     for(int i = 0; i < s.length(); i++) {
-    //         int q = "(){}[]".indexOf(s.substring(i, i + 1));
-    //         if(q % 2 == 1) {
-    //             if(p.isEmpty() || p.pop() != q - 1) return false;
-    //         } else p.push(q);
-    //     }
-    //     return p.isEmpty();
-    // }
+
+
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (c == '(')
+                stack.push(')');
+            else if (c == '[')
+                stack.push(']');
+            else if (c == '{')
+                stack.push('}');
+            else { // ) ] }的情况，不能出现在一开始，也不能不与栈顶的匹配
+                if (stack.isEmpty() || stack.pop() != c)
+                    return false;
+            }
+        }
+
+        return stack.isEmpty();
+    }
 }
