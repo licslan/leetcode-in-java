@@ -30,4 +30,25 @@ public class Solution {
 
         return head;
     }
+
+    // 通过在链表头添加一个辅助节点
+    public ListNode removeNthFromEnd1(ListNode head, int n) {
+        ListNode pre = new ListNode(0);
+        pre.next = head;
+
+        ListNode fast = pre;
+        ListNode slow = pre;
+        for (int i = 0; i < n; ++i)
+            fast = fast.next;
+
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        slow.next = slow.next.next;
+
+        // 这里要你返回的是链表头，不是被删除的节点
+        return pre.next;
+    }
 }
