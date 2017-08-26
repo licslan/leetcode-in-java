@@ -9,4 +9,19 @@ public class Solution {
         }
         return nums.length - count;
     }
+
+    public int removeDuplicates1(int[] nums) {
+        if (nums.length < 2)
+            return nums.length;
+
+        int i = 0;
+        for (int j = 1; j < nums.length; ++j) {
+            if (nums[j] != nums[i]) {
+                ++i;
+                nums[i] = nums[j];
+            }
+        }
+
+        return i + 1;
+    }
 }
